@@ -1,0 +1,56 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+cleanCase
+
+# Set application name
+application=$(getApplication)
+
+runApplication $(setFields)
+
+runApplication $(rm 0/alpha.liquid)
+
+runApplication $(rm 0/LiF.liquid)  
+runApplication $(rm 0/BeF2l.liquid)
+runApplication $(rm 0/ZrF4l.liquid) 
+runApplication $(rm 0/ThF4l.liquid)   
+runApplication $(rm 0/UF4l.liquid)
+runApplication $(rm 0/UF3l.liquid)
+runApplication $(rm 0/dummy.liquid) 
+
+runApplication $(rm 0/alpha.gas)
+
+runApplication $(rm 0/F.gas)
+runApplication $(rm 0/F2.gas)
+runApplication $(rm 0/UF3.gas)   
+runApplication $(rm 0/UF4.gas)       
+runApplication $(rm 0/UF5.gas)        
+runApplication $(rm 0/UF6.gas)    
+runApplication $(rm 0/ZrF4.gas)       
+runApplication $(rm 0/FLi.gas)
+runApplication $(rm 0/F2Li2.gas)         
+runApplication $(rm 0/F3Li3.gas)      
+runApplication $(rm 0/F2Be.gas)               
+runApplication $(rm 0/F3BeLi.gas)           
+runApplication $(rm 0/ThF4.gas)
+runApplication $(rm 0/F4Be2.gas)
+runApplication $(rm 0/Ar.gas)
+
+runApplication $(rm -r 0.* 1* 2* 3* 4* 5* 6* 7* 8* 9* PyFoam* log* log.* processor* PyFoam* Gnuplot*)
+runApplication $(rm constant/polyMesh/sets)
+runApplication $(setFields)
+runApplication topoSet
+runApplication decomposePar
+runApplication $(mpirun -np 4 multiphaseEulerFoamT8 -parallel)
+runApplication reconstructPar
+#runApplication $(paraFoam)
+
+#pyFoamPlotRunner.py
+#runApplication reconstructPar
+#runApplication $(paraFoam)
+
+#If you want to modify this, just add a # at the beg. or the line
+#if it does not work, remove or install pyFoamPlotRunner.py

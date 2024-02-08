@@ -1,0 +1,75 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      setFieldsDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+defaultFieldValues
+(
+    volScalarFieldValue alpha.gas 1
+    volScalarFieldValue alpha.liquid 0
+);
+
+regions
+(
+    boxToCell //liquid area
+    {
+        box (0 0 -0.1) (0.5 0.05 0.1);
+        fieldValues
+        (
+            volScalarFieldValue alpha.gas    0
+            volScalarFieldValue alpha.liquid 1
+
+            volScalarFieldValue LiF.liquid      0.382630131
+            volScalarFieldValue BeF2l.liquid    0.312124579
+            volScalarFieldValue ZrF4l.liquid    0.185041312
+            volScalarFieldValue ThF4l.liquid    0.033606523
+            volScalarFieldValue UF4l.liquid     0.086597455
+            volScalarFieldValue UF3l.liquid     0.000000000
+            volScalarFieldValue dummy.liquid    0.000000000
+
+        );
+    }
+    
+    boxToCell //gas area
+    {
+        box (0 0.05 -0.1) (0.5 0.1 0.1);
+        fieldValues
+        (
+            volScalarFieldValue alpha.gas    1
+            volScalarFieldValue alpha.liquid 0
+            
+
+            volScalarFieldValue F.gas         0
+            volScalarFieldValue F2.gas        0
+            volScalarFieldValue UF3.gas       0
+            volScalarFieldValue UF4.gas       0
+            volScalarFieldValue UF5.gas       0
+            volScalarFieldValue UF6.gas       0
+            volScalarFieldValue ZrF4.gas      0   
+            volScalarFieldValue FLi.gas       0 
+            volScalarFieldValue F2Be.gas      0
+            volScalarFieldValue F3BeLi.gas    0 
+            volScalarFieldValue F3Li3.gas     0  
+            volScalarFieldValue F2Li2.gas     0
+            volScalarFieldValue ThF4.gas      0  
+            volScalarFieldValue F4Be2.gas     0
+            volScalarFieldValue Ar.gas        1
+
+        );
+    }
+
+);
+
+
+// ************************************************************************* //

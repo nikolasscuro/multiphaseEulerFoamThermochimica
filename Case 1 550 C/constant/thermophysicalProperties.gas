@@ -1,0 +1,318 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  9
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      thermophysicalProperties.gas;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+thermoType
+{
+    type            heRhoThermo;
+    mixture         multiComponentMixture;
+    transport       const;
+    thermo          eConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleInternalEnergy;
+}
+
+species
+(
+    F   
+    F2
+    UF3
+    UF4
+    UF5
+    UF6
+    ZrF4
+    FLi
+    F2Li2
+    F3Li3
+    F2Be
+    F3BeLi
+    ThF4
+    F4Be2
+    Ar    
+);
+
+defaultSpecie Ar;
+
+F
+{
+    specie
+    {
+        molWeight   18.998403;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+F2
+{
+    specie
+    {
+        molWeight   37.996806;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+UF3
+{
+    specie
+    {
+        molWeight   37.996806;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+UF4
+{
+    specie
+    {
+        molWeight   37.996806;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+UF5
+{
+    specie
+    {
+        molWeight   37.996806;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+UF6
+{
+    specie
+    {
+        molWeight   37.996806;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+ZrF4
+{
+    specie
+    {
+        molWeight   37.996806;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+FLi
+{
+    specie
+    {
+        molWeight   25.93900;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+F2Li2
+{
+    specie
+    {
+        molWeight   51.878800;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+F3Li3
+{
+    specie
+    {
+        molWeight   77.81700;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+F2Be
+{
+    specie
+    {
+        molWeight   47.0089880;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+F3BeLi
+{
+    specie
+    {
+        molWeight   72.948391;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+ThF4
+{
+    specie
+    {
+        molWeight   72.948391;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+F4Be2
+{
+    specie
+    {
+        molWeight   72.948391;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+
+Ar
+{
+    specie
+    {
+        molWeight   39.948;
+    }
+    thermodynamics
+    {
+        Hf          0;
+        Cv          724.8;
+    }
+    transport
+    {
+        mu          1.84e-05;
+        Pr          0.7;
+    }
+}
+// ************************************************************************* //
