@@ -1,0 +1,36 @@
+EXE_INC = \
+    -I../include \
+    -I$(HOME)/Documents/MFEFT8/phaseSystems/lnInclude \
+    -I$(HOME)/Documents/MFEFT8/interfacialModels/lnInclude \
+    -I$(HOME)/Documents/MFEFT8/interfacialCompositionModels/lnInclude \
+    -I$(LIB_SRC)/transportModels/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/basic/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/specie/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/reactionThermo/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/solidThermo/lnInclude \
+    -I$(LIB_SRC)/thermophysicalModels/chemistryModel/lnInclude \
+    -I$(LIB_SRC)/MomentumTransportModels/momentumTransportModels/lnInclude \
+    -I$(LIB_SRC)/MomentumTransportModels/compressible/lnInclude \
+    -I$(LIB_SRC)/MomentumTransportModels/phaseCompressible/lnInclude \
+    -I$(LIB_SRC)/finiteVolume/lnInclude \
+    -I$(LIB_SRC)/meshTools/lnInclude \
+    -I$(LIB_SRC)/dynamicFvMesh/lnInclude
+
+EXE_LIBS = \
+    -lphaseSystem \
+    -lmultiphaseSystems \
+    -leulerianInterfacialModels \
+    -leulerianInterfacialCompositionModels \
+    -lmultiphaseMomentumTransportModels \
+    -lmultiphaseReactions \
+    -lphaseFluidThermophysicalTransportModels \
+    -lphaseFluidReactionThermophysicalTransportModels \
+    -lfiniteVolume \
+    -lfvModels \
+    -lfvConstraints \
+    -lmeshTools \
+    -ldynamicFvMesh \
+    -lblas \
+    -llapack \
+    $(HOME)/Documents/thermochimica/obj/libthermoc.a \
+    $(HOME)/Documents/thermochimica/obj/libthermochimica.a
