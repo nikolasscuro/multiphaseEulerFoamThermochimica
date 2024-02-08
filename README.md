@@ -49,9 +49,11 @@ The available tutorial case used a proprietary database and it is NOT open-sourc
 
 solver command:
 
-		multiphaseEulerFoamT
+		multiphaseEulerFoamThermochimica
 
 
-This is part of my PhD at Ontario Tech University, and will constantly be updated along the time.
+This is part of my PhD at Ontario Tech University, and will constantly be updated along the time, please see the published paper regarding this solver:
+
+https://doi.org/10.1016/j.anucene.2023.110327
 
 
