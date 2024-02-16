@@ -122,9 +122,13 @@ Example: your molten salt system is LiF+BeF2+ZrF4+ThF4+UF4+UF3, the following sh
 
 Then, you can compile the code and run the tutorial.
 
-multiphaseEulerFoamThermochimica or multiphaseEulerFoamT8
+wclean
+wmake
+
+multiphaseEulerFoamT8
 
 
 This is part of my PhD at Ontario Tech University, and will constantly be updated over the time.
+*the database is not available here
 
 
