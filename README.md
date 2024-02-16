@@ -10,9 +10,9 @@ https://github.com/ORNL-CEES/thermochimica
 
 This solver provides the bridge between computational fluid dynamics and computational thermodynamics to take under consideration chemical reaction for molten salts, and many other applications if programmed. This current solver was especifically designed for capability development between both codes. An example has been used and explained throughout the paper https://doi.org/10.1016/j.anucene.2023.110327
 
-Before using this code, I expect you have OF9 and Thermochimica installed
+Before using this code, I expect you to have OF9 and Thermochimica installed
 
-After clonning this project, some adjustments need to be made to make it work:
+Some adjustments are necessary to make this code work under a different condition rather than the published Demonstration Problem (Fluoride Volatility Process). I cannot guarantee it will work in different conditions, but the current principle works and has shown promising results when compared to experimental data:
 
 > I suggest clonning this solver, and compiling it in your Documents folder, create a MFEFT named folder and copy and paste the following folders from the original multiphaseEulerFoam V9 to there (phaseSystems, interfacialModels, interfacialCompositionModels). Both Thermochimica libraries (.a) you can copy and paste after compiling Thermochimica (give a search on Thermochimica's main folder, find it, copy and paste there).
 
@@ -22,7 +22,7 @@ After clonning this project, some adjustments need to be made to make it work:
       $(HOME)/Documents/MFEFT/thermochimica/obj/libthermoc.a \
       $(HOME)/Documents/MFEFT/thermochimica/obj/libthermochimica.a
       
-In the case you haven't installed Thermochimica, please follow instructions from here: 
+In case you haven't installed Thermochimica, please follow the instructions from here: 
 
 https://nuclear.ontariotechu.ca/piro/thermochimica/getting-started.php
 
@@ -50,7 +50,7 @@ The available tutorial case used a proprietary database and it is NOT open-sourc
   At the same time, both, the OpenFOAM tutorial case AND the solver should 100% match the desired chemical reaction, modifying all necessary headers, otherwise, errors will occur. The current example is designed for only two phases liquid+gas, where the liquid is a molten salt mixture with several species and the gas contains an inert component (Argon) and a reactive one (Fluorine (F2)). 
 
   
-If you use a different set of species, and components, rename everything according to your database. Example:
+If you use a different set of species or molten salt system, modify everything according to your database. Example:
 
 1) gaseousOutputs.H
 
@@ -117,7 +117,7 @@ Example: your molten salt system is LiF+BeF2+ZrF4+ThF4+UF4+UF3, the following sh
     double dMassElement5  = (Xi_liq_Liq5[celli]+Xi_liq_Liq6[celli])*fluid.multiComponentPhases()[1][celli]*cv[celli]*rho_Salt/M_Salt; //UF4+UF3
     double dMassElement6  = (Xi_liq_Liq1[celli]+2*Xi_liq_Liq2[celli]+4*(Xi_liq_Liq3[celli]+Xi_liq_Liq4[celli]+Xi_liq_Liq5[celli])+3*Xi_liq_Liq6[celli])*fluid.multiComponentPhases()[1][celli]*cv[celli]*rho_Salt/M_Salt; //all F
 
-5) in YEqn3.H you can change the precision of unreacted cells to speed-up calculations, but I recommend using what is currently set.
+5) in YEqn3.H you can change the precision of unreacted cells to speed up calculations, but I recommend using what is currently set.
 
 
 Then, you can compile the code and run the tutorial.
@@ -125,6 +125,6 @@ Then, you can compile the code and run the tutorial.
 multiphaseEulerFoamThermochimica or multiphaseEulerFoamT8
 
 
-This is part of my PhD at Ontario Tech University, and will constantly be updated along the time.
+This is part of my PhD at Ontario Tech University, and will constantly be updated over the time.
 
 
